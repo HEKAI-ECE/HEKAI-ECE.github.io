@@ -25,10 +25,10 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2021/11/30/Hexo%E5%8D%9A%E5%AE%A2%E6%8C%87%E5%8D%97/0d0921f3d7ca7bcb5f64d99fa9096b63f624a86e.jpg">
 <meta property="og:image" content="http://latex.codecogs.com/gif.latex?{\color{Green}{\gamma \text{\ae}\sqrt{a^2+b^2}\widehat{\geq }}}">
-<meta property="og:image" content="http://latex.codecogs.com/gif.latex?{\color{DarkGreen}{\lambda_1 = cos(\theta) - i sin(\theta)}">
+<meta property="og:image" content="http://latex.codecogs.com/gif.latex?{\color{Yellow}{\lambda_1 = cos(\theta) - i sin(\theta)}">
 <meta property="og:image" content="http://example.com/2021/11/30/Hexo%E5%8D%9A%E5%AE%A2%E6%8C%87%E5%8D%97/d991cf3d664e04dfbc56a350d0cfbeee.png">
 <meta property="article:published_time" content="2021-11-30T05:04:18.000Z">
-<meta property="article:modified_time" content="2021-12-02T14:51:09.998Z">
+<meta property="article:modified_time" content="2021-12-02T15:00:40.750Z">
 <meta property="article:author" content="HEKAI">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Windows">
@@ -307,6 +307,16 @@
 <p>例：这是一句话<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="这是对应的脚注
 ">[1]</span></a></sup></p>
 <p>更优雅的使用方式，是将脚注写在文末，比如：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs markdown">正文<br><br><span class="hljs-section">## 参考</span><br>[<span class="hljs-symbol">^1</span>]: <span class="hljs-link">参考资料1</span><br>[<span class="hljs-symbol">^2</span>]: <span class="hljs-link">参考资料2</span><br></code></pre></td></tr></table></figure></p>
+<h4 id="折叠文字"><a href="#折叠文字" class="headerlink" title="折叠文字"></a>折叠文字</h4><p>使用了Html中summary与detail标签：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">details</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">summary</span>&gt;</span>折叠的标题<span class="hljs-tag">&lt;/<span class="hljs-name">summary</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>折叠的内容，可以包含代码等<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">details</span>&gt;</span><br></code></pre></td></tr></table></figure></p>
+<details>
+<summary>折叠的标题</summary>
+<p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs angelscript"><span class="hljs-keyword">class</span> <span class="hljs-symbol">test</span>&#123;<br><span class="hljs-keyword">public</span>:<br>    test();<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+</p>
+</details>
+
+
 <h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><h4 id="便签"><a href="#便签" class="headerlink" title="便签"></a>便签</h4><p>在 markdown 中加入如下的代码来使用便签：<br><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs django"><span class="hljs-template-tag">&#123;% <span class="hljs-name">note</span> success %&#125;</span><span class="xml"></span><br><span class="xml">文字 或者 `markdown` 均可</span><br><span class="xml"></span><span class="hljs-template-tag">&#123;% <span class="hljs-name">endnote</span> %&#125;</span><br></code></pre></td></tr></table></figure></p>
 <p>或者使用 HTML 形式：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;note note-primary&quot;</span>&gt;</span>标签<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></td></tr></table></figure></p>
 <p>可选便签：</p>
@@ -357,9 +367,9 @@
 <p>In terms of eigenvalues and eigenvectors of R, Euler’s theorem (“for every rotation there is a single line in space whose points do not move”) is restated as follows: </p>
 <p>For every rotation R, there is a nonzero vector $\mathbf{v_3}$ where $R\mathbf{v_3} = \mathbf{v_3}$; this is due to the fact that $\mathbf{v_3}$ is an eigenvector of $R$ associated with the eigenvalue 1.</p>
 <h4 id="Git-Pages显示Latex"><a href="#Git-Pages显示Latex" class="headerlink" title="Git Pages显示Latex"></a>Git Pages显示Latex</h4><p>Git Pages将md文件解析为html。因此本地能够显示的Latex公式在html中将不能被数学引擎翻译。<br>显示Latex公式的办法：<br>有些网站将处理程序放置在服务器上，只需在页面上传递公式的Tex表达，就会返回公式的图像，其实就是ASCIIMathTeXImg的服务器版本。<br><a target="_blank" rel="noopener" href="http://www.codecogs.com">codecogs</a>提供在线Latex服务，<br><a target="_blank" rel="noopener" href="https://latex.91maths.com/">91math</a>也有类似的功能。<br>例如a2＋b2 的平方根，只需在网页所在位置输入以下html代码，就会返回一张该公式的图片：<br><figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;http://latex.codecogs.com/gif.latex?\sqrt</span></span></span><span class="hljs-template-variable">&#123;a^2+b^2&#125;</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span> /&gt;</span></span><br></code></pre></td></tr></table></figure></p>
-<p>此方法的缺点是生成图片不是特别清晰，且为白底黑字，在博客暗色模式下看不清楚。<br>改进办法是使用颜色代码，如绿色，即可在白底与黑底均能显示：</p>
+<p>此方法的缺点是生成图片不是特别清晰，且为透明底黑字，在博客暗色模式下看不清楚。<br>改进办法是使用颜色代码，如绿色，即可在白底与黑底均能显示：</p>
 <p><img src="http://latex.codecogs.com/gif.latex?{\color{Green}{\gamma \text{\ae}\sqrt{a^2+b^2}\widehat{\geq }}}" srcset="/img/loading.gif" lazyload /></p>
-<p><img src="http://latex.codecogs.com/gif.latex?{\color{DarkGreen}{\lambda_1 = cos(\theta) - i sin(\theta)}" srcset="/img/loading.gif" lazyload/></p>
+<p><img src="http://latex.codecogs.com/gif.latex?{\color{Yellow}{\lambda_1 = cos(\theta) - i sin(\theta)}" srcset="/img/loading.gif" lazyload/></p>
 <p>如果耐得烦，也可以在外部输入Latex公式后进行截图，并自行选择合适的背景色：<br><img src="d991cf3d664e04dfbc56a350d0cfbeee.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <p>另一种方法：在html中添加<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://polyfill.io/v3/polyfill.min.js?features=es6&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;MathJax-script&quot;</span> <span class="hljs-attr">async</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure></p>
 <p>但此方法所写的Latex公式不带$$，因此不能被本地数学引擎解析。使用时以\开头，并将后续公式内所有字符用括号括起来。<br>例：</p>
