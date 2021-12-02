@@ -24,9 +24,11 @@
 <meta property="og:description" content="工作中除了业务外，还需要主动对技术进行思考与挖掘。技术乃开发的立足之本，总结工作和业余的技术要点与思考，对于当下的自己，以后的自己，都是十分必要的。于当下，面向博客式地学习有利于深入理解知识点；于未来，遇到重复的工作和故障时，可以参考过去的技术博客，还可以作为简历的一部分。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2021/11/30/Hexo%E5%8D%9A%E5%AE%A2%E6%8C%87%E5%8D%97/0d0921f3d7ca7bcb5f64d99fa9096b63f624a86e.jpg">
-<meta property="og:image" content="http://latex.codecogs.com/gif.latex?\lambda_1 = cos(\theta) - i sin(\theta)">
+<meta property="og:image" content="http://latex.codecogs.com/gif.latex?{\color{Green}{\gamma \text{\ae}\sqrt{a^2+b^2}\widehat{\geq }}}">
+<meta property="og:image" content="http://latex.codecogs.com/gif.latex?{\color{DarkGreen}{\lambda_1 = cos(\theta) - i sin(\theta)}">
+<meta property="og:image" content="http://example.com/2021/11/30/Hexo%E5%8D%9A%E5%AE%A2%E6%8C%87%E5%8D%97/d991cf3d664e04dfbc56a350d0cfbeee.png">
 <meta property="article:published_time" content="2021-11-30T05:04:18.000Z">
-<meta property="article:modified_time" content="2021-12-02T13:57:59.854Z">
+<meta property="article:modified_time" content="2021-12-02T14:23:27.845Z">
 <meta property="article:author" content="HEKAI">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Windows">
@@ -345,24 +347,23 @@
 <p>修改引擎bug<br>修改文件/node_modules\kramed\lib\rules\inline.js中escape和em两行，具体修改如下：<br><figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs taggerscript">//  escape: /^<span class="hljs-symbol">\\</span>([<span class="hljs-symbol">\\</span>`*&#123;&#125;<span class="hljs-symbol">\[</span><span class="hljs-symbol">\]</span>()#$+<span class="hljs-symbol">\-</span>.!_&gt;])/,<br>  escape: /^<span class="hljs-symbol">\\</span>([`*<span class="hljs-symbol">\[</span><span class="hljs-symbol">\]</span>()#$+<span class="hljs-symbol">\-</span>.!_&gt;])/,<br></code></pre></td></tr></table></figure></p>
 <p>这一步是在原基础上取消了对,{,}的转义(escape)。<br>同时把第20行的em变量也要做相应的修改。<br><figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs taggerscript">//  em: /^<span class="hljs-symbol">\b</span>_((?:__|[<span class="hljs-symbol">\s</span><span class="hljs-symbol">\S</span>])+?)_<span class="hljs-symbol">\b</span>|^<span class="hljs-symbol">\*</span>((?:<span class="hljs-symbol">\*</span><span class="hljs-symbol">\*</span>|[<span class="hljs-symbol">\s</span><span class="hljs-symbol">\S</span>])+?)<span class="hljs-symbol">\*</span>(?!<span class="hljs-symbol">\*</span>)/,<br>  em: /^<span class="hljs-symbol">\*</span>((?:<span class="hljs-symbol">\*</span><span class="hljs-symbol">\*</span>|[<span class="hljs-symbol">\s</span><span class="hljs-symbol">\S</span>])+?)<span class="hljs-symbol">\*</span>(?!<span class="hljs-symbol">\*</span>)/,<br></code></pre></td></tr></table></figure></p>
 <p>重新启动hexo:<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs 1c">hexo clean <span class="hljs-meta">&amp;&amp; hexo g -d</span><br></code></pre></td></tr></table></figure></p>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 <p>例：</p>
 <p>for $R=\begin{bmatrix}<br>cos\theta &amp; -sin\theta &amp; 0 \\<br>sin\theta &amp; cos\theta &amp; 0 \\<br>0 &amp; 0 &amp; 1<br>\end{bmatrix}$,</p>
-<p>Eigenvalues<br><img src="http://latex.codecogs.com/gif.latex?\lambda_1 = cos(\theta) - i sin(\theta)" srcset="/img/loading.gif" lazyload/></p>
+<p>Eigenvalues</p>
 <p>$\lambda_1 = cos(\theta) - i sin(\theta)$</p>
 <p>$\lambda_2 = cos(\theta) + i sin(\theta)$</p>
 <p>$\lambda_3 = 1$</p>
 <p>Eigenvectors $v_1 = (-i, 1, 0)$, $v_2 = (i, 1, 0)$, $v_3 = (0, 0, 1)$</p>
 <p>In terms of eigenvalues and eigenvectors of R, Euler’s theorem (“for every rotation there is a single line in space whose points do not move”) is restated as follows: </p>
 <p>For every rotation R, there is a nonzero vector $\mathbf{v_3}$ where $R\mathbf{v_3} = \mathbf{v_3}$; this is due to the fact that $\mathbf{v_3}$ is an eigenvector of $R$ associated with the eigenvalue 1.</p>
-<math>
-    <mroot>
-        <mi>a</mi>
-        <mi>n</mi>
-    </mroot>
-</math>
-
-<p>Git Pages将md文件解析为html。因此本地能够显示的Latex公式在html中将不能被数学引擎翻译。<br>显示Latex公式的办法：<br>有些网站将处理程序放置在服务器上，只需在页面上传递公式的Tex表达，就会返回公式的图像，其实就是ASCIIMathTeXImg的服务器版本。<br><a target="_blank" rel="noopener" href="http://www.codecogs.com">codecogs</a>提供在线Latex服务，<br>例如a2＋b2 的平方根，只需在网页所在位置输入以下html代码，就会返回一张该公式的图片：<br><figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;http://latex.codecogs.com/gif.latex?\sqrt</span></span></span><span class="hljs-template-variable">&#123;a^2+b^2&#125;</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;\sqrt</span></span></span><span class="hljs-template-variable">&#123;a^2+b^2&#125;</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span> /&gt;</span></span><br></code></pre></td></tr></table></figure></p>
-<p>此方法的缺点是生成图片不是特别清晰，且为白底黑字，在博客暗色模式下看不清楚。</p>
+<h4 id="Git-Pages显示Latex"><a href="#Git-Pages显示Latex" class="headerlink" title="Git Pages显示Latex"></a>Git Pages显示Latex</h4><p>Git Pages将md文件解析为html。因此本地能够显示的Latex公式在html中将不能被数学引擎翻译。<br>显示Latex公式的办法：<br>有些网站将处理程序放置在服务器上，只需在页面上传递公式的Tex表达，就会返回公式的图像，其实就是ASCIIMathTeXImg的服务器版本。<br><a target="_blank" rel="noopener" href="http://www.codecogs.com">codecogs</a>提供在线Latex服务，<br><a target="_blank" rel="noopener" href="https://latex.91maths.com/">91math</a>也有类似的功能。<br>例如a2＋b2 的平方根，只需在网页所在位置输入以下html代码，就会返回一张该公式的图片：<br><figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;http://latex.codecogs.com/gif.latex?\sqrt</span></span></span><span class="hljs-template-variable">&#123;a^2+b^2&#125;</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span> /&gt;</span></span><br></code></pre></td></tr></table></figure></p>
+<p>此方法的缺点是生成图片不是特别清晰，且为白底黑字，在博客暗色模式下看不清楚。<br>改进办法是使用颜色代码，如绿色，即可在白底与黑底均能显示：</p>
+<p><img src="http://latex.codecogs.com/gif.latex?{\color{Green}{\gamma \text{\ae}\sqrt{a^2+b^2}\widehat{\geq }}}" srcset="/img/loading.gif" lazyload /></p>
+<p><img src="http://latex.codecogs.com/gif.latex?{\color{DarkGreen}{\lambda_1 = cos(\theta) - i sin(\theta)}" srcset="/img/loading.gif" lazyload/></p>
+<p>如果耐得烦，也可以在外部输入Latex公式后进行截图，并自行选择合适的背景色：<br><img src="d991cf3d664e04dfbc56a350d0cfbeee.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>这是对应的脚注
 <a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
             </div>
