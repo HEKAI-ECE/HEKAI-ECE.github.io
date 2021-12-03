@@ -24,11 +24,11 @@
 <meta property="og:description" content="工作中除了业务外，还需要主动对技术进行思考与挖掘。技术乃开发的立足之本，总结工作和业余的技术要点与思考，对于当下的自己，以后的自己，都是十分必要的。于当下，面向博客式地学习有利于深入理解知识点；于未来，遇到重复的工作和故障时，可以参考过去的技术博客，还可以作为简历的一部分。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2021/11/30/Hexo%E5%8D%9A%E5%AE%A2%E6%8C%87%E5%8D%97/0d0921f3d7ca7bcb5f64d99fa9096b63f624a86e.jpg">
+<meta property="og:image" content="http://latex.codecogs.com/gif.latex?{\lambda_1 = cos(\theta) - i sin(\theta)}">
 <meta property="og:image" content="http://latex.codecogs.com/gif.latex?{\color{Green}{\gamma \text{\ae}\sqrt{a^2+b^2}\widehat{\geq }}}">
-<meta property="og:image" content="http://latex.codecogs.com/gif.latex?{\color{Yellow}{\lambda_1 = cos(\theta) - i sin(\theta)}">
 <meta property="og:image" content="http://example.com/2021/11/30/Hexo%E5%8D%9A%E5%AE%A2%E6%8C%87%E5%8D%97/d991cf3d664e04dfbc56a350d0cfbeee.png">
 <meta property="article:published_time" content="2021-11-30T05:04:18.000Z">
-<meta property="article:modified_time" content="2021-12-02T15:13:56.028Z">
+<meta property="article:modified_time" content="2021-12-03T12:33:28.419Z">
 <meta property="article:author" content="HEKAI">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Windows">
@@ -237,7 +237,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年12月2日 晚上
+                  本文最后更新于：2021年12月3日 晚上
                 
               </p>
             
@@ -370,18 +370,25 @@
 <p>In terms of eigenvalues and eigenvectors of R, Euler’s theorem (“for every rotation there is a single line in space whose points do not move”) is restated as follows: </p>
 <p>For every rotation R, there is a nonzero vector $\mathbf{v_3}$ where $R\mathbf{v_3} = \mathbf{v_3}$; this is due to the fact that $\mathbf{v_3}$ is an eigenvector of $R$ associated with the eigenvalue 1.</p>
 <h4 id="Git-Pages显示Latex"><a href="#Git-Pages显示Latex" class="headerlink" title="Git Pages显示Latex"></a>Git Pages显示Latex</h4><p>Git Pages将md文件解析为html。因此本地能够显示的Latex公式在html中将不能被数学引擎翻译。<br>显示Latex公式的办法：<br>有些网站将处理程序放置在服务器上，只需在页面上传递公式的Tex表达，就会返回公式的图像，其实就是ASCIIMathTeXImg的服务器版本。<br><a target="_blank" rel="noopener" href="http://www.codecogs.com">codecogs</a>提供在线Latex服务，<br><a target="_blank" rel="noopener" href="https://latex.91maths.com/">91math</a>也有类似的功能。<br>例如a2＋b2 的平方根，只需在网页所在位置输入以下html代码，就会返回一张该公式的图片：<br><figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;http://latex.codecogs.com/gif.latex?\sqrt</span></span></span><span class="hljs-template-variable">&#123;a^2+b^2&#125;</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span> /&gt;</span></span><br></code></pre></td></tr></table></figure></p>
-<p>此方法的缺点是生成图片不是特别清晰，且为透明底黑字，在博客暗色模式下看不清楚。<br>改进办法是使用颜色代码，如绿色，即可在白底与黑底均能显示：</p>
+<p>此方法的缺点是生成图片不是特别清晰，且为透明底黑字，在博客暗色模式下看不清楚。</p>
+<p><img src="http://latex.codecogs.com/gif.latex?{\lambda_1 = cos(\theta) - i sin(\theta)}" srcset="/img/loading.gif" lazyload/></p>
+<p>妥协办法是使用颜色代码，如绿色，即可在白底与黑底均能显示：</p>
 <p><img src="http://latex.codecogs.com/gif.latex?{\color{Green}{\gamma \text{\ae}\sqrt{a^2+b^2}\widehat{\geq }}}" srcset="/img/loading.gif" lazyload /></p>
-<p><img src="http://latex.codecogs.com/gif.latex?{\color{Yellow}{\lambda_1 = cos(\theta) - i sin(\theta)}" srcset="/img/loading.gif" lazyload/></p>
 <p>如果耐得烦，也可以在外部输入Latex公式后进行截图，并自行选择合适的背景色：<br><img src="d991cf3d664e04dfbc56a350d0cfbeee.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<p>另一种方法：在html中添加<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://polyfill.io/v3/polyfill.min.js?features=es6&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;MathJax-script&quot;</span> <span class="hljs-attr">async</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure></p>
-<p>但此方法所写的Latex公式不带$$，因此不能被本地数学引擎解析。使用时以\开头，并将后续公式内所有字符用括号括起来。此外，最好将需要翻译为公式的部分用html标签整体打包，以免github在解析时将\自动消去。<br>例：</p>
+<p>更好的一种方法：在html中添加<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://polyfill.io/v3/polyfill.min.js?features=es6&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;MathJax-script&quot;</span> <span class="hljs-attr">async</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure></p>
+<p>经测试，如下格式可在md和html中均兼容Latex，即使用<br><figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="xml">\begin</span><span class="hljs-template-variable">&#123;equation&#125;</span><span class="xml"> </span><br><span class="xml">\mathbf</span><span class="hljs-template-variable">&#123;f&#125;</span><span class="xml"> = \mu m\mathbf</span><span class="hljs-template-variable">&#123;g&#125;</span><span class="xml">cos\theta</span><br><span class="xml">y&#x27; = x^</span><span class="hljs-template-variable">&#123;3&#125;</span><span class="xml">ln</span><span class="hljs-template-variable">&#123;y&#125;</span><span class="xml"> + e^</span><span class="hljs-template-variable">&#123;x+y&#125;</span><span class="xml"></span><br><span class="xml">\end</span><span class="hljs-template-variable">&#123;equation&#125;</span><span class="xml"> </span><br></code></pre></td></tr></table></figure></p>
+<p>\begin{equation}<br>\mathbf{f} = \mu m\mathbf{g}cos\theta<br>\end{equation} </p>
+<p>\begin{equation}<br>y’ = x^{3}ln{y} + e^{x+y}<br>\end{equation} </p>
+<p>缺点是必须整行使用公式，不能文本与数学符号结合。</p>
+<p>如果要在网页中使用行内数学模式，则可参考以下方法：<br>使用时以\开头，并将后续公式内所有字符用括号括起来。<br>此后，将全部文本和公式用html标签整体打包，以免引擎在解析时将\自动消去。<br>例：</p>
 <figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs livescript">&lt;body&gt;<br>&lt;p&gt;<br>  When <span class="hljs-string">\(a</span> <span class="hljs-string">\ne</span> <span class="hljs-number">0</span><span class="hljs-string">\),</span> there are two solutions <span class="hljs-keyword">to</span> <span class="hljs-string">\(ax^2</span> + bx + c = <span class="hljs-number">0</span><span class="hljs-string">\)</span> <span class="hljs-keyword">and</span> they are<br>  <span class="hljs-string">\[x</span> = &#123;-b <span class="hljs-string">\pm</span> <span class="hljs-string">\sqrt&#123;b^2-4ac&#125;</span> <span class="hljs-string">\over</span> <span class="hljs-number">2a</span>&#125;.<span class="hljs-string">\]</span><br>&lt;/p&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
-<p><body></p>
-<p><p>
+<body>
+<p>
   When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
   \[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]
-</p><br>&lt;/body&gt;</p>
+</p>
+</body>
+
 <section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>这是对应的脚注
 <a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
             </div>

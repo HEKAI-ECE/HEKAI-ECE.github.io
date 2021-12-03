@@ -16,18 +16,38 @@
   <meta name="description" content="">
   <meta name="author" content="HEKAI">
   <meta name="keywords" content="">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="标签 - C++">
-<meta property="og:url" content="http://example.com/tags/C/index.html">
+  <meta name="description" content="返回值优化 Return Value临时对象 Temporary Object内存管理 Memory Management多线程 MultiThreading信号量 semaphore ： 允许给定上限的线程数访问共享资源。当上限为1时，即变为互斥。互斥 mutex ： 在任何时间只允许一个线程进行操作临界区 critical section ： 互斥锁的最简单应用是临界区，即某一时间只能由一个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《EfficientC++》读书笔记（三）">
+<meta property="og:url" content="http://example.com/2021/12/03/%E3%80%8AEfficientC-%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/index.html">
 <meta property="og:site_name" content="笔耕不辍">
+<meta property="og:description" content="返回值优化 Return Value临时对象 Temporary Object内存管理 Memory Management多线程 MultiThreading信号量 semaphore ： 允许给定上限的线程数访问共享资源。当上限为1时，即变为互斥。互斥 mutex ： 在任何时间只允许一个线程进行操作临界区 critical section ： 互斥锁的最简单应用是临界区，即某一时间只能由一个">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-12-03T14:06:52.000Z">
+<meta property="article:modified_time" content="2021-12-03T14:07:26.254Z">
 <meta property="article:author" content="HEKAI">
+<meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary_large_image">
   
-  <title>标签 - C++ - 笔耕不辍</title>
+  <title>《EfficientC++》读书笔记（三） - 笔耕不辍</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -54,7 +74,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -150,22 +170,45 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
+         style="background: url('/img/aurora.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="标签 - C++">
+            <span class="h2" id="subtitle" title="《EfficientC++》读书笔记（三）">
               
             </span>
 
             
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-12-03 22:06" pubdate>
+        2021年12月3日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      371 字
+    </span>
+  
+
+  
+
+  
+  
+</div>
+
+            
           </div>
 
-          
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
           
         </div>
       </div>
@@ -174,52 +217,98 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 3 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2021</p>
-    
-    <a href="/2021/12/03/%E3%80%8AEfficientC-%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">《EfficientC++》读书笔记（三）</span>
-      <time style="float: right;">12-03</time>
-    </a>
-  
-    
-    <a href="/2021/12/02/%E3%80%8AEfficientC++%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">《EfficientC++》读书笔记（二）</span>
-      <time style="float: right;">12-02</time>
-    </a>
-  
-    
-    <a href="/2021/12/01/%E3%80%8AEfficientC++%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">《EfficientC++》读书笔记（一）</span>
-      <time style="float: right;">12-01</time>
-    </a>
-  
-</div>
 
-
-
-
-
-              </div>
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">《EfficientC++》读书笔记（三）</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年12月3日 晚上
+                
+              </p>
+            
+            <div class="markdown-body">
+              <span id="more"></span>
+<h2 id="返回值优化-Return-Value"><a href="#返回值优化-Return-Value" class="headerlink" title="返回值优化 Return Value"></a>返回值优化 Return Value</h2><h2 id="临时对象-Temporary-Object"><a href="#临时对象-Temporary-Object" class="headerlink" title="临时对象 Temporary Object"></a>临时对象 Temporary Object</h2><h2 id="内存管理-Memory-Management"><a href="#内存管理-Memory-Management" class="headerlink" title="内存管理 Memory Management"></a>内存管理 Memory Management</h2><h2 id="多线程-MultiThreading"><a href="#多线程-MultiThreading" class="headerlink" title="多线程 MultiThreading"></a>多线程 MultiThreading</h2><p>信号量 semaphore ： 允许给定上限的线程数访问共享资源。当上限为1时，即变为互斥。<br>互斥 mutex ： 在任何时间只允许一个线程进行操作<br>临界区 critical section ： 互斥锁的最简单应用是临界区，即某一时间只能由一个线程执行的代码段。退出临界区代码段后，线程释放资源以允许其他线程进入。</p>
+<p>使用锁对象的好处：<br>对包含多个返回点的复杂子程序的维护<br>从异常恢复<br>锁操作中的多态<br>日志记录的多态</p>
+<p>三种互斥锁：<br>直接调用pthread_mutex_lock()/unlock()<br>创建单独锁类互斥对象，并调用上述函数<br>从基类锁派生互斥对象</p>
+<h2 id="内联-Inline"><a href="#内联-Inline" class="headerlink" title="内联 Inline"></a>内联 Inline</h2><h2 id="标准模板库-STL"><a href="#标准模板库-STL" class="headerlink" title="标准模板库 STL"></a>标准模板库 STL</h2><h2 id="引用计数-Reference-Count"><a href="#引用计数-Reference-Count" class="headerlink" title="引用计数 Reference Count"></a>引用计数 Reference Count</h2><h2 id="编码优化"><a href="#编码优化" class="headerlink" title="编码优化"></a>编码优化</h2><h2 id="设计优化"><a href="#设计优化" class="headerlink" title="设计优化"></a>设计优化</h2>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/C/">C++</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/12/02/%E3%80%8AEfficientC++%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/">
+                        <span class="hidden-mobile">《EfficientC++》读书笔记（二）</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -302,6 +391,19 @@
   
 
 
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
 
 
 
